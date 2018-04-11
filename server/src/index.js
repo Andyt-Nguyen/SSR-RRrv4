@@ -1,14 +1,12 @@
-// Serve as the root file of our server
+// Serves as the entry point for our server webpack configuration
 import express from 'express';
-import React from 'react';
-import { renderToString } from 'react-dom/server';
-import Home from './client/Components/Home';
+import renderer from './helpers/renderer';
 const app = express();
 
-app.get('/', (req, res) => {
-	const content = renderToString(<Home />);
 
-	res.send(content)
+app.use(express.static('public')); // This tells express to treat this as a static file that is available to the outside world
+app.get('/', (req, res) => {
+	res.send(renderer());
 });
 
 app.listen(3000, () => console.log(`The server is now listening on port 3000`));

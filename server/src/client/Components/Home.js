@@ -1,7 +1,10 @@
 import React from 'react';
 
 const Home = () => (
-	<div>Homepage Pimps</div>
+	<div>
+		<p>Home Component Pimps</p>
+		<button onClick={() => console.log('Vape nations')}>Touch me</button>
+	</div>
 );
 
 export default Home;
