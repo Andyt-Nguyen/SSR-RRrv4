@@ -1,8 +1,8 @@
 // Serve as the root file of our server
-const express = require('express');
-const React = require('react');
-const renderToString = require('react-dom/server').renderToString;
-const Home = require('./client/Components/Home').default;
+import express from 'express';
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import Home from './client/Components/Home';
 const app = express();
 
 app.get('/', (req, res) => {
